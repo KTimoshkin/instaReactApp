@@ -27,5 +27,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KTimoshkin/instaReactApp.git"
+  },
+  "author": "Konstantin Timoshkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KTimoshkin/instaReactApp/issues"
+  },
+  "homepage": "https://github.com/KTimoshkin/instaReactApp#readme"
 }
