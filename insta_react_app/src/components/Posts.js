@@ -1,11 +1,73 @@
 import React, {Component} from 'react';
-import Post from './Post';
+import User from './User';
+import ErrorMessage from './ErrorMessage';
+import InstaService from '../services/instaService';
 
 export default class Posts extends Component {
+    InstaService = new InstaService();
+    state = {
+        posts: [],
+        error: false
+    }
+
+    componentDidMount() {
+        this.updatePosts();
+    }
+
+    updatePosts(){
+        this.InstaService.getAllPosts()
+            .then(this.onPostLoaded)
+            .catch(this.onError)
+    }
+
+    onPostLoaded = (posts) => {
+        this.setState({
+            posts: posts,
+            error: false
+        });
+    }
+
+    onError = (err) => {
+        this.setState({
+            error: true
+        });
+    }
+
+    renderItems(arr) {
+        return arr.map((item) => {
+            const {name, altname, photo, src, alt, descr, id} = item;
+
+            return(
+                <div key={id} className="post">
+                    <User
+                        src={photo}
+                        alt={altname}
+                        name={name}
+                        min>
+                    </User>
+                    <img src={src} alt={alt}/>
+                    <div className="post__name">
+                        {name}
+                    </div>
+                    <div className="post__descr">
+                        {descr}
+                    </div>
+                </div>
+            );
+        });
+    }
+
     render() {
+        const {error, posts} = this.state;
+        if (error) {
+            return <ErrorMessage></ErrorMessage>
+        }
+
+        const items = this.renderItems(posts);
+        
         return(
             <div className="left">
-                <Post src="https://cnet2.cbsistatic.com/img/-qvJVYfnJOTphXGOc2fzSNnwQPk=/1600x900/2018/06/07/78e06ce4-81e0-4b35-992f-6a2b3585b931/mojave-night.jpg" alt="mojave"></Post>
+                {items}
             </div>
         );
     }
