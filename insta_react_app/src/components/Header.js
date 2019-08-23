@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import logo from '../static/img/logo.svg';
 
 export default class Header extends Component {
@@ -6,13 +7,13 @@ export default class Header extends Component {
         return (
             <header>
                 <div className="container h-flex">
-                    <a href="/" className="logo">
+                    <Link to="/" className="logo">
                         <img src={logo} alt="logo"/>
-                    </a>
+                    </Link>
                     <nav className="links">
                         <ul>
-                            <li><a href="/" className="menu__links">Лента</a></li>
-                            <li><a href="/" className="menu__links">Профиль</a></li>
+                            <li><Link to="/" className="menu__links">Лента</Link></li>
+                            <li><Link to="/profile" className="menu__links">Профиль</Link></li>
                         </ul>
                     </nav>
                 </div>
