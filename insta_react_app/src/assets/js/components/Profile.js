@@ -7,8 +7,8 @@ const Profile = () => {
         <div className="container profile">
             <User
                 src="https://www.apple.com/leadership/tim-cook/meta/og.png?201902051735"
-                alt="Tim Cook"
-                name="Tim Cook">
+                alt="Konstantin Timoshkin"
+                name="Konstantin Timoshkin">
             </User>
             <Palette></Palette>
         </div>
