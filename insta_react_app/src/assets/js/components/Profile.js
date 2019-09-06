@@ -6,7 +6,7 @@ const Profile = () => {
     return(
         <div className="container profile">
             <User
-                src="https://www.apple.com/leadership/tim-cook/meta/og.png?201902051735"
+                src="https://3dnews.ru/assets/external/illustrations/2018/02/01/964971/theres-one-simple-reason-nintendo-is-bringing-super-mario-to-the-iphone-first.jpg"
                 alt="Konstantin Timoshkin"
                 name="Konstantin Timoshkin">
             </User>
